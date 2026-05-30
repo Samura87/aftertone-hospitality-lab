@@ -132,7 +132,7 @@ export function Process() {
         />
 
         {/* 橫向流程標題列 */}
-        <div className="mt-16 grid grid-cols-2 gap-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-0">
+        <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-5 md:flex md:flex-wrap md:items-center md:justify-center md:gap-0">
           {process.map((p, i) => (
             <div key={p.no} className="flex items-center">
               <div className="flex h-14 w-full items-center justify-center rounded-lg bg-jade px-5 text-center text-sm font-600 leading-tight text-ink md:w-auto">
