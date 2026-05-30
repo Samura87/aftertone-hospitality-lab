@@ -96,7 +96,6 @@ function TourismLineChart({
     <svg
       viewBox={`0 0 ${W} ${H}`}
       className="w-full"
-      style={{ minWidth: 560 }}
       aria-label={yLabel ?? "折線圖"}
     >
       <defs>
@@ -286,7 +285,7 @@ export function HaijingCasePage() {
 
         {/* Chart1：五年三區域比較，墾丁峰值標記 */}
         <Reveal delay={0.2}>
-          <div className="mt-8 rounded-xl border border-jade/10 bg-moss/5 p-6">
+          <div className="mt-8 rounded-xl border border-jade/10 bg-moss/5 p-4 sm:p-6 overflow-hidden">
             <h3 className="text-sm font-500 text-sand">{d.googleTrends.chart1.subtitle}</h3>
             <p className="mt-1 text-xs text-sand-dim">{d.googleTrends.chart1.note}</p>
             <div className="mt-3 flex flex-wrap gap-3">
@@ -315,7 +314,7 @@ export function HaijingCasePage() {
 
         {/* Chart2：墾丁完整走勢單條折線 */}
         <Reveal delay={0.35}>
-          <div className="mt-6 rounded-xl border border-jade/10 bg-moss/5 p-6">
+          <div className="mt-6 rounded-xl border border-jade/10 bg-moss/5 p-4 sm:p-6 overflow-hidden">
             <h3 className="text-sm font-500 text-sand">{d.googleTrends.chart2.subtitle}</h3>
             <p className="mt-1 text-xs text-sand-dim">{d.googleTrends.chart2.note}</p>
             <div className="mt-3 flex items-center gap-1.5 text-xs text-sand-dim">
@@ -340,7 +339,7 @@ export function HaijingCasePage() {
           <p className="mt-2 text-sm text-sand-dim">{d.demandForecast.subtitle}</p>
         </Reveal>
         <Reveal delay={0.2}>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {d.demandForecast.regions.map((r) => (
               <div key={r.name} className="rounded-lg border border-jade/15 bg-moss/10 p-4 text-center">
                 <p className="text-sm font-500 text-sand">{r.name}</p>
