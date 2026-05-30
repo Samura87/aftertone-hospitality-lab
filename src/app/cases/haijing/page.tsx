@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-ink pt-20">
+      <main className="min-h-screen bg-ink pt-20 overflow-x-hidden">
         <HaijingCasePage />
       </main>
       <Footer />

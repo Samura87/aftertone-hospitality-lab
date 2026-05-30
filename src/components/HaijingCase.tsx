@@ -95,7 +95,7 @@ function TourismLineChart({
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      className="w-full"
+      className="w-full max-w-full"
       aria-label={yLabel ?? "折線圖"}
     >
       <defs>
@@ -268,7 +268,7 @@ export function HaijingCasePage() {
           </ul>
         </Reveal>
         <Reveal delay={0.3}>
-          <div className="mt-8 overflow-x-auto">
+          <div className="mt-8 overflow-hidden">
             {/* 折線圖 SVG */}
             <TourismLineChart data={d.tourismData.chartData} />
           </div>
