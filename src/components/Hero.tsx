@@ -78,7 +78,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="eyebrow mb-8 text-jade"
         >
-          AfterTone Hospitality Lab · {brand.year}
+          
         </motion.p>
 
         <h1 className="font-serif-tc text-4xl font-500 leading-[1.3] text-sand sm:text-5xl lg:text-7xl">
@@ -203,15 +203,6 @@ export function Hero() {
             </motion.span>
           </AnimatePresence>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.7 }}
-          className="mt-6 text-sm tracking-wide text-sand-dim/70"
-        >
-          {brand.subtitle}
-        </motion.p>
       </div>
 
       {/* Scroll cue */}
