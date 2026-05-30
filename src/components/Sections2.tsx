@@ -429,7 +429,7 @@ export function Footer() {
             {brand.email}
           </a>
           <p className="text-[0.65rem] text-sand-dim/50">
-            © {brand.year} AfterTone Hospitality Lab. All rights reserved.
+            © {brand.year} 餘是旅宿管理顧問有限公司 AfterTone Hospitality Lab. All rights reserved.
           </p>
         </div>
       </div>
