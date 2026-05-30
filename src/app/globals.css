@@ -80,6 +80,12 @@ body:has(#snap-container) {
   overflow: hidden;
 }
 
+@media (max-width: 767px) {
+  body:has(#snap-container) {
+    overflow: visible;
+  }
+}
+
 body {
   background: var(--ink);
   color: var(--sand);
