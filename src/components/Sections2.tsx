@@ -17,7 +17,7 @@ import {
 /* ---------------- ESG ---------------- */
 export function ESG() {
   return (
-    <section id="esg" className="relative flex h-screen flex-col justify-center">
+    <section id="esg" className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0">
       <div className="glow-jade absolute right-0 top-1/4 h-[40rem] w-[40rem] opacity-40" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
@@ -71,7 +71,7 @@ export function ESG() {
 /* ---------------- 市場現況 (p03) ---------------- */
 export function MarketOverview() {
   return (
-    <section className="relative flex h-screen flex-col justify-center">
+    <section className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0">
       <div className="absolute inset-0 bg-gradient-to-b from-ink to-pine" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
@@ -145,7 +145,7 @@ export function MarketOverview() {
 /* ---------------- 數據成效 + 三情境 ---------------- */
 export function Metrics() {
   return (
-    <section className="relative flex h-screen flex-col justify-center">
+    <section className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0">
       <div className="absolute inset-0 bg-gradient-to-b from-ink to-pine" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
@@ -241,7 +241,7 @@ export function Pricing() {
     ...pricing.part2.rows.map((r) => ({ ...r, isHeader: false })),
   ];
   return (
-    <section id="pricing" className="relative flex h-screen flex-col justify-center" data-theme="light">
+    <section id="pricing" className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0" data-theme="light">
       <div className="absolute inset-0 bg-paper" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
@@ -323,7 +323,7 @@ export function Team() {
 /* ---------------- 聯繫 CTA ---------------- */
 export function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden flex h-screen flex-col justify-center">
+    <section id="contact" className="relative overflow-hidden flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0">
       <div className="absolute inset-0 bg-gradient-to-br from-pine via-ink to-moss" />
       <div className="glow-jade absolute left-1/2 top-1/2 h-[50rem] w-[50rem] -translate-x-1/2 -translate-y-1/2" />
 

@@ -1,9 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { nav, brand } from "@/lib/content";
+
+/* smooth scroll that works regardless of scroll container */
+function smoothNavScroll(targetId: string) {
+  const el = document.getElementById(targetId);
+  if (!el) return;
+  const container = document.getElementById("snap-container");
+  // Desktop: container has overflow scroll
+  if (container && window.matchMedia("(min-width: 768px)").matches) {
+    const targetTop = el.offsetTop;
+    const startTop = container.scrollTop;
+    const distance = targetTop - startTop;
+    const duration = 650;
+    const startTime = performance.now();
+    function ease(t: number) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
+    function step(now: number) {
+      const p = Math.min((now - startTime) / duration, 1);
+      container!.scrollTop = startTop + distance * ease(p);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  } else {
+    // Mobile: normal page scroll
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,8 +39,9 @@ export function Navbar() {
 
   useEffect(() => {
     const container = document.getElementById("snap-container");
-    const target = container || document.documentElement;
-    const getScroll = () => container ? container.scrollTop : window.scrollY;
+    const isMobile = !window.matchMedia("(min-width: 768px)").matches;
+    const target = (container && !isMobile) ? container : null;
+    const getScroll = () => target ? target.scrollTop : window.scrollY;
 
     const onScroll = () => {
       setScrolled(getScroll() > 40);
@@ -34,9 +60,9 @@ export function Navbar() {
     };
     onScroll();
 
-    if (container) {
-      container.addEventListener("scroll", onScroll, { passive: true });
-      return () => container.removeEventListener("scroll", onScroll);
+    if (target) {
+      target.addEventListener("scroll", onScroll, { passive: true });
+      return () => target.removeEventListener("scroll", onScroll);
     } else {
       window.addEventListener("scroll", onScroll, { passive: true });
       return () => window.removeEventListener("scroll", onScroll);
@@ -81,6 +107,7 @@ export function Navbar() {
                 <>
                   <a
                     href={`${homeBase}#${n.id}`}
+                    onClick={(e) => { if (!homeBase) { e.preventDefault(); smoothNavScroll(n.id); } }}
                     className={`relative text-sm transition-colors duration-500 hover:opacity-100 ${textDim} hover:${textBase}`}
                   >
                     {n.label}
@@ -99,6 +126,7 @@ export function Navbar() {
               ) : (
                 <a
                   href={n.href ?? `${homeBase}#${n.id}`}
+                  onClick={(e) => { if (!homeBase && !n.href) { e.preventDefault(); smoothNavScroll(n.id); } }}
                   className={`relative text-sm transition-colors duration-500 hover:opacity-100 ${textDim} hover:${textBase}`}
                 >
                   {n.label}
@@ -111,6 +139,7 @@ export function Navbar() {
 
         <a
           href="#contact"
+          onClick={(e) => { if (!homeBase) { e.preventDefault(); smoothNavScroll("contact"); } }}
           className={`hidden rounded-full border px-5 py-2 text-sm transition-all duration-500 md:inline-block ${borderAccent} ${textAccentSoft} ${hoverBg}`}
         >
           開始合作
@@ -145,7 +174,7 @@ export function Navbar() {
                 <li key={n.id}>
                   <a
                     href={n.href ?? `${homeBase}#${n.id}`}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => { setOpen(false); if (!homeBase && !n.href) { e.preventDefault(); smoothNavScroll(n.id); } }}
                     className={`text-base transition-colors ${textDim}`}
                   >
                     {n.label}
@@ -155,7 +184,7 @@ export function Navbar() {
               <li>
                 <a
                   href="#contact"
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => { setOpen(false); if (!homeBase) { e.preventDefault(); smoothNavScroll("contact"); } }}
                   className={`inline-block rounded-full border px-5 py-2.5 text-sm ${borderAccent} ${textAccentSoft}`}
                 >
                   開始合作

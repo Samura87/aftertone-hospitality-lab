@@ -14,7 +14,7 @@ import {
 /* ---------------- 品牌定位 ---------------- */
 export function Philosophy() {
   return (
-    <section id="philosophy" className="relative flex h-screen flex-col justify-center">
+    <section id="philosophy" className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
           eyebrow="Phase 2 · 品牌定位"
@@ -61,7 +61,7 @@ export function Philosophy() {
 /* ---------------- 品牌脈絡時間軸 ---------------- */
 export function Timeline() {
   return (
-    <section className="relative flex h-screen flex-col justify-center" data-theme="light">
+    <section className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0" data-theme="light">
       <div className="absolute inset-0 bg-paper" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
@@ -123,7 +123,7 @@ export function Timeline() {
 /* ---------------- 六步驟服務流程 ---------------- */
 export function Process() {
   return (
-    <section id="process" className="relative flex h-screen flex-col justify-center">
+    <section id="process" className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0">
       <div className="glow-jade absolute left-1/3 top-0 h-[40rem] w-[40rem] opacity-40" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading
@@ -198,7 +198,7 @@ export function Process() {
 /* ---------------- 五大體驗模組 ---------------- */
 export function Modules() {
   return (
-    <section className="relative flex h-screen flex-col justify-center" id="modules" data-theme="light">
+    <section className="relative flex min-h-screen flex-col justify-center py-20 md:h-screen md:min-h-0 md:py-0" id="modules" data-theme="light">
       <div className="absolute inset-0 bg-paper-2" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeading

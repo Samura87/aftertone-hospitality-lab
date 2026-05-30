@@ -66,6 +66,10 @@ export function SnapController() {
     const container = document.getElementById("snap-container");
     if (!container) return;
 
+    // Only enable snap-scroll on desktop (>=768px)
+    const mq = window.matchMedia("(min-width: 768px)");
+    if (!mq.matches) return;
+
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
       if (isScrolling.current) return;
@@ -122,9 +126,12 @@ export function ScrollToTop() {
   useEffect(() => {
     const container = document.getElementById("snap-container");
     if (!container) return;
-    const onScroll = () => setVisible(container.scrollTop > window.innerHeight);
-    container.addEventListener("scroll", onScroll, { passive: true });
-    return () => container.removeEventListener("scroll", onScroll);
+    const isMobile = !window.matchMedia("(min-width: 768px)").matches;
+    const target = isMobile ? window : container;
+    const getScroll = () => isMobile ? window.scrollY : container.scrollTop;
+    const onScroll = () => setVisible(getScroll() > window.innerHeight);
+    target.addEventListener("scroll", onScroll, { passive: true });
+    return () => target.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -132,7 +139,11 @@ export function ScrollToTop() {
       aria-label="回到頂部"
       onClick={() => {
         const container = document.getElementById("snap-container");
-        if (container) smoothScrollTo(container, 0, 600);
+        if (container && window.matchMedia("(min-width: 768px)").matches) {
+          smoothScrollTo(container, 0, 600);
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
       }}
       className={`fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-jade/30 bg-pine/90 text-jade shadow-lg backdrop-blur transition-all duration-300 hover:bg-jade hover:text-ink ${
         visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"

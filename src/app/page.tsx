@@ -13,7 +13,7 @@ import { ScrollToTop, SnapController } from "@/components/ScrollManager";
 
 export default function Home() {
   return (
-    <div id="snap-container" className="h-screen overflow-y-auto">
+    <div id="snap-container" className="md:h-screen md:overflow-y-auto">
       <Navbar />
       <main>
         <Hero />
