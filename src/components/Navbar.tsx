@@ -94,6 +94,9 @@ export function Navbar() {
         <a href="/" className="group flex flex-col">
           <span className={`font-serif-tc text-lg font-600 tracking-wide transition-colors duration-500 ${textBase}`}>
             After<span className={`transition-colors duration-500 ${textAccent}`}>Tone</span>
+            <span className={`ml-1.5 text-[0.62rem] font-400 tracking-[0.28em] transition-colors duration-500 ${textDim}`}>HOSPITALITY LAB</span>
+          </span>
+          <span className={`text-[0.55rem] tracking-[0.12em] transition-colors duration-500 ${textDim}`}>
             餘是旅宿管理顧問有限公司
           </span>
         </a>
