@@ -4,7 +4,7 @@
 
 export const brand = {
   name: "AfterTone Hospitality Lab", // p01/p10/p46/p47 原文
-  nameZh: "✎ 餘韻款待實驗室（簡報無此中文譯名，自訂；如不要可刪）",
+  nameZh: "餘是旅宿管理顧問有限公司",
   tagline: "Rich experience. Your frequency. Long after you leave.", // p01 原文
   heroLine1: "旅行中的美好記憶", // p01 原文，依首頁視覺調整移除句尾標點
   heroLine2: "只屬於你自己", // p01 原文，依首頁視覺調整移除句尾標點
@@ -16,11 +16,11 @@ export const brand = {
 
 // 導覽：id = 首頁區塊錨點；href = 獨立頁面路由（兩者擇一）
 export const nav: { id: string; label: string; href?: string }[] = [
-  { id: "philosophy", label: "品牌定位" },
-  { id: "process", label: "顧問服務" },
-  { id: "cases", label: "案例分享" },
+  { id: "philosophy", label: "關於我們" },
+  { id: "process", label: "服務項目" },
   { id: "pricing", label: "合作方案" },
-  { id: "contact", label: "聯繫" },
+  { id: "cases", label: "案例分享" },
+  { id: "contact", label: "聯繫我們" },
 ];
 
 // ============================================================
@@ -232,9 +232,9 @@ export const pricing = {
   part1: {
     label: "第一部分　市場及收益顧問服務",
     rows: [
-      { item: "新館建置（含帳號＋物件＋整合）", unit: "一次性", price: "NT$35,000" },
-      { item: "線上管理月費", unit: "每月", price: "NT$10,000" },
-      { item: "收益策略月費", unit: "每月", price: "NT$10,000 + 5%" },
+      { item: "新館建置（含帳號＋物件＋整合）", unit: "一次性", price: "（議定）" },
+      { item: "線上管理月費", unit: "每月", price: "（議定）" },
+      { item: "收益策略月費", unit: "每月", price: "（議定）" },
     ],
   },
   part2: {
@@ -253,9 +253,9 @@ export const pricing = {
 
 // 六步驟服務流程用的簡化費用（保留給 Process 區塊）
 export const pricingSimple = [
-  { title: "新館建置", price: "NT$35,000", unit: "一次性" },
-  { title: "線上管理", price: "NT$10,000", unit: "／ 月" },
-  { title: "營收策略", price: "NT$10,000", unit: "／ 月 + 5%" },
+  { title: "新館建置", price: "（議定）", unit: "一次性" },
+  { title: "線上管理", price: "（議定）", unit: "／ 月" },
+  { title: "營收策略", price: "（議定）", unit: "／ 月" },
 ];
 
 // 團隊

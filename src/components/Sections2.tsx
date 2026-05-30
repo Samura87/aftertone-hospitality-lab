@@ -413,11 +413,11 @@ export function Footer() {
 
         {/* Center — nav links */}
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-sand-dim">
-          <a href="#philosophy" className="transition-colors hover:text-jade">品牌定位</a>
-          <a href="#process" className="transition-colors hover:text-jade">顧問服務</a>
-          <a href="#cases" className="transition-colors hover:text-jade">案例分享</a>
+          <a href="#philosophy" className="transition-colors hover:text-jade">關於我們</a>
+          <a href="#process" className="transition-colors hover:text-jade">服務項目</a>
           <a href="#pricing" className="transition-colors hover:text-jade">合作方案</a>
-          <a href="#contact" className="transition-colors hover:text-jade">聯繫</a>
+          <a href="#cases" className="transition-colors hover:text-jade">案例分享</a>
+          <a href="#contact" className="transition-colors hover:text-jade">聯繫我們</a>
         </nav>
 
         {/* Right — contact & copyright */}

@@ -95,6 +95,9 @@ export function Navbar() {
           <span className={`font-serif-tc text-lg font-600 tracking-wide transition-colors duration-500 ${textBase}`}>
             After<span className={`transition-colors duration-500 ${textAccent}`}>Tone</span>
           </span>
+          <span className={`text-[0.5rem] tracking-[0.15em] transition-colors duration-500 ${textDim}`}>
+            餘是旅宿管理顧問
+          </span>
           <span className={`hidden text-[0.62rem] tracking-[0.28em] transition-colors duration-500 sm:inline ${textDim}`}>
             HOSPITALITY LAB
           </span>
