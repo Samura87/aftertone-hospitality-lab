@@ -333,12 +333,14 @@ export function Contact() {
         </Reveal>
         <Reveal delay={0.5}>
           <h2 className="font-serif-tc text-3xl font-500 leading-snug text-sand sm:text-4xl lg:text-5xl">
-            旅行中的美好記憶，只屬於你自己。
+            旅行中的美好記憶
+            <br />
+            只屬於你自己
           </h2>
         </Reveal>
         <Reveal delay={1}>
           <p className="mt-4 font-serif-tc text-2xl font-500 text-jade sm:text-3xl lg:text-4xl">
-            餘韻，只有你懂。
+            餘韻，只有你懂
           </p>
         </Reveal>
         <Reveal delay={1.5}>

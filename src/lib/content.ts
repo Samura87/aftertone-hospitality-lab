@@ -6,9 +6,9 @@ export const brand = {
   name: "AfterTone Hospitality Lab", // p01/p10/p46/p47 原文
   nameZh: "✎ 餘韻款待實驗室（簡報無此中文譯名，自訂；如不要可刪）",
   tagline: "Rich experience. Your frequency. Long after you leave.", // p01 原文
-  heroLine1: "旅行中的美好記憶，", // p01 原文
-  heroLine2: "只屬於你自己。", // p01 原文
-  heroAccent: "餘韻，只有你懂。", // p01 原文
+  heroLine1: "旅行中的美好記憶", // p01 原文，依首頁視覺調整移除句尾標點
+  heroLine2: "只屬於你自己", // p01 原文，依首頁視覺調整移除句尾標點
+  heroAccent: "餘韻，只有你懂", // p01 原文，依首頁視覺調整移除句尾標點
   subtitle: "海境生活 × 旅宿體驗顧問整合提案", // p01 原文
   email: "miltonsakuma@gmail.com", // p10 原文
   year: "2026",
