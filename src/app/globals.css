@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* ── Navbar 案例分享 hint underline ── */
+@keyframes hint-underline {
+  0%   { width: 0; opacity: 0; }
+  8%   { width: 100%; opacity: 1; }
+  22%  { width: 100%; opacity: 1; }
+  30%  { width: 0; opacity: 0; }
+  100% { width: 0; opacity: 0; }
+}
+.hint-underline {
+  animation: hint-underline 5s ease-in-out infinite;
+}
+/* hover 時立刻全寬，停住 */
+.group:hover .hint-underline {
+  animation: none;
+  width: 100% !important;
+  opacity: 1 !important;
+}
+
+/* ============================================================
+   AfterTone Hospitality Lab — Design System
+   墨綠靜感 · 餘韻品牌
+   ============================================================ */
+
+:root {
+  /* Core palette — deep teal / forest, mint accent, warm sand */
+  --ink: #0c211f;          /* deepest background */
+  --pine: #123330;         /* primary dark surface */
+  --moss: #1a4843;         /* raised surface */
+  --jade: #3fae8f;         /* primary accent (mint/jade) */
+  --jade-soft: #8fd9c2;    /* light accent */
+  --sand: #e9e2d3;         /* warm cream text on dark */
+  --sand-dim: #b7b3a6;     /* muted cream */
+  --paper: #f4f1e9;        /* light section bg */
+  --paper-2: #ece7da;      /* light section alt */
+  --char: #1b2b28;         /* dark text on light */
+  --gold: #c9a96a;         /* subtle luxury accent */
+
+  --background: var(--ink);
+  --foreground: var(--sand);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-pine: var(--pine);
+  --color-moss: var(--moss);
+  --color-jade: var(--jade);
+  --color-jade-soft: var(--jade-soft);
+  --color-sand: var(--sand);
+  --color-sand-dim: var(--sand-dim);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-char: var(--char);
+  --color-gold: var(--gold);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-serif: var(--font-serif-tc), "Noto Serif TC", serif;
+  --font-sans: var(--font-sans-tc), "Noto Sans TC", system-ui, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+}
+
+body:has(#snap-container) {
+  overflow: hidden;
+}
+
+body {
+  background: var(--ink);
+  color: var(--sand);
+  font-family: var(--font-sans);
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: var(--jade);
+  color: var(--ink);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--moss);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--jade);
+}
+
+/* Typography helpers */
+.font-serif-tc {
+  font-family: var(--font-serif);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Grain / noise overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Animated jade hairline */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--jade) 50%, transparent);
+}
+
+/* Radial atmosphere glow */
+.glow-jade {
+  background: radial-gradient(
+    circle at center,
+    rgba(63, 174, 143, 0.18) 0%,
+    transparent 65%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Snap scroll sections — JS-controlled */
+#snap-container > main > section {
+  min-height: 100vh;
+}
