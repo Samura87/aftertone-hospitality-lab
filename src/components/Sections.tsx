@@ -132,14 +132,14 @@ export function Process() {
         />
 
         {/* 橫向流程標題列 */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-0">
+        <div className="mt-16 grid grid-cols-2 gap-3 md:flex md:flex-wrap md:items-center md:justify-center md:gap-0">
           {process.map((p, i) => (
             <div key={p.no} className="flex items-center">
-              <div className="flex h-14 items-center justify-center rounded-lg bg-jade px-5 text-center text-sm font-600 leading-tight text-ink">
+              <div className="flex h-14 w-full items-center justify-center rounded-lg bg-jade px-5 text-center text-sm font-600 leading-tight text-ink md:w-auto">
                 {p.title}
               </div>
               {i < process.length - 1 && (
-                <span className="px-1 text-jade/60">▸</span>
+                <span className="hidden px-1 text-jade/60 md:inline">▸</span>
               )}
             </div>
           ))}
