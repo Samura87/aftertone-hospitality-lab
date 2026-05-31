@@ -17,6 +17,7 @@ const sansTC = Noto_Sans_TC({
 });
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "AfterTone Hospitality Lab｜餘是旅宿管理顧問",
   description:
     "AfterTone Hospitality Lab 餘是旅宿管理顧問有限公司 — 為精品旅宿打造靜感沉浸式體驗。市場收益顧問、五大體驗模組、ESG 永續方向，陪伴旅宿走向下一個十年。",
