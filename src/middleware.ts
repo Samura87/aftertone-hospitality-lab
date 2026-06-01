@@ -22,8 +22,8 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Login page and auth endpoint — allow
-  if (pathname === "/login" || pathname === "/auth") {
+  // Login page and auth endpoint — allow (startsWith handles trailing slash)
+  if (pathname.startsWith("/login") || pathname.startsWith("/auth")) {
     return NextResponse.next();
   }
 
